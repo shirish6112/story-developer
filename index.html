@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Story Generator</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+</head>
+<body>
+  <div class="container">
+    {% if not category %}
+      <!-- Category Selection -->
+      <div class="hero">
+        <div class="card animated fadeIn">
+          <h1>Welcome to the Story Generator</h1>
+          <p>Create your own adventure by choosing one of our exciting categories below.</p>
+          <form action="/" method="POST">
+            <select name="category" required>
+              <option value="">-- Choose a Category --</option>
+              <option value="fantasy">Fantasy</option>
+              <option value="adventure">Adventure</option>
+              <option value="romance">Romance</option>
+              <option value="mystery">Mystery</option>
+              <option value="horror">Horror</option>
+              <option value="sci-fi">Sci-Fi</option>
+            </select>
+            <br /><br />
+            <button type="submit">Start Your Adventure</button>
+          </form>
+        </div>
+      </div>
+    {% else %}
+      <!-- Options Selection -->
+      <div class="options-container animated fadeIn">
+        <h2>Build Your {{ category|capitalize }} Story</h2>
+        <form action="/" method="POST">
+          <input type="hidden" name="category" value="{{ category }}" />
+          <div class="options-grid">
+            {% for opt in ['option1', 'option2', 'option3', 'option4', 'option5', 'option6'] %}
+              <div class="option-card">
+                <h3>{{ opt|capitalize }}</h3>
+                {% for choice in options_data[opt] %}
+                  <label class="option-label">
+                    <input type="radio" name="{{ opt }}" value="{{ loop.index }}" required> {{ choice }}
+                  </label>
+                {% endfor %}
+              </div>
+            {% endfor %}
+          </div>
+          <br />
+          <button type="submit">Generate Story</button>
+        </form>
+      </div>
+    {% endif %}
+    
+    {% if error_message %}
+      <p class="error-message">{{ error_message }}</p>
+    {% endif %}
+  </div>
+</body>
+</html>
