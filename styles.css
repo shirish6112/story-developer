@@ -1,0 +1,180 @@
+/* Reset & Basic Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: #f4f4f4;
+    color: #333;
+  }
+  
+  /* Hero Section for Category Selection */
+  .hero {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  /* Card styling for the category form */
+  .card {
+    background: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .card h1 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .card p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    color: #555;
+  }
+  
+  select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    transition: border 0.3s ease;
+  }
+  
+  select:focus {
+    outline: none;
+    border-color: #2575fc;
+  }
+  
+  button {
+    background: #2575fc;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    margin: 20px auto 0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    display: block;
+  }
+  
+  button:hover {
+    background: #1a5fd0;
+  }
+  
+  /* Options Container & Grid */
+  .options-container {
+    background: #f9f9f9;
+    padding: 30px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  
+  .options-container h2 {
+    margin-bottom: 20px;
+    color: #2575fc;
+  }
+  
+  .options-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .option-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 15px;
+    flex: 1 1 30%;
+    max-width: 300px;
+    text-align: left;
+  }
+  
+  .option-card h3 {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    color: #333;
+  }
+  
+  .option-label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .option-label:hover {
+    background: #e8e8e8;
+  }
+  
+  /* Story Box - Normal Paragraph */
+  .story-box {
+    border: 2px solid #007bff;
+    padding: 20px;
+    margin: 20px 0;
+    white-space: normal;
+    overflow-x: visible;
+    text-align: left;
+  }
+  
+  /* Button Group for Story Page */
+  .button-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  /* Generate Another Story Button */
+  .generate-another {
+    text-decoration: none;
+    background: #28a745;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+  }
+  
+  .generate-another:hover {
+    background: #218838;
+  }
+  
+  /* Error Message */
+  .error-message {
+    color: red;
+    margin-top: 20px;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+  }
+  
+  .fadeIn {
+    animation-name: fadeIn;
+  }
