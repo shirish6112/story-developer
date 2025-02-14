@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Generated Story</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+</head>
+<body>
+  <div class="container">
+    <h1>Your Generated Story</h1>
+    <div class="story-box">
+      <p>{{ story }}</p>
+    </div>
+    <div class="button-group">
+      <button onclick="copyStory()">Copy Story</button>
+      <a href="/" class="generate-another">Generate Another Story</a>
+    </div>
+  </div>
+  <script>
+    function copyStory() {
+      const storyText = document.querySelector('.story-box').innerText;
+      navigator.clipboard.writeText(storyText).then(() => {
+        alert("Story copied to clipboard!");
+      });
+    }
+  </script>
+</body>
+</html>
